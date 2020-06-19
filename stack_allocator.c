@@ -3,7 +3,7 @@
 //
 //
 
-#include"stack_allocator.h"
+#include "stack_allocator.h"
 
 void* stack_buf_init(uint32_t size)
 {
@@ -17,7 +17,8 @@ void* stack_buf_init(uint32_t size)
         buffer = (__stack_buffer*)malloc(sizeof(__stack_buffer));
         buffer->_offset = 0;
         buffer->_size = size;
-        buffer->_mem = (uint8_t*)malloc(size * (sizeof(uint32_t)));
+        buffer->_mem = malloc(size * sizeof(uint32_t));
+        //buffer->_mem = (uint8_t*)malloc(size);
     }
     return buffer;
 }
@@ -53,7 +54,7 @@ void stack_buf_set(__stack_buffer* buffer, uint32_t object)
 {
     if (buffer == NULL) {
         stack_buffer_ERROR_ID = _ATTEMPT_TO_ACCESS_A_NONEXISTENT_ENTITY;
-        printf("\nERROR_ID: %i\n", stack_buffer_ERROR_ID);
+        //printf("\nERROR_ID: %i\n", stack_buffer_ERROR_ID);
         //exit(_ATTEMPT_TO_ACCESS_A_NONEXISTENT_ENTITY);
     }
     else {
@@ -65,7 +66,7 @@ void stack_buf_free(__stack_buffer* buffer)
 {
     if (buffer == NULL) {
         stack_buffer_ERROR_ID = _ATTEMPT_TO_ACCESS_A_NONEXISTENT_ENTITY;
-        printf("\nERROR_ID: %i\n", stack_buffer_ERROR_ID);
+        //printf("\nERROR_ID: %i\n", stack_buffer_ERROR_ID);
     }
     else {
         stack_buf_set(buffer, 0);
@@ -111,4 +112,3 @@ void test()
     }
     stack_buf_free(buf);
 }
-

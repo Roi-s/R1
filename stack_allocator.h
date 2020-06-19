@@ -5,12 +5,10 @@
 //-----------------------------------------------------------------------------------------------------------------------------
 #ifndef __STACK_ALLOCATOR_H__
 
-
 #include <stdint.h>
-
+#include <stdio.h>
 
 static int8_t stack_buffer_ERROR_ID = 0;
-
 
 typedef enum _stack_buf_error {
     _ATTEMPT_TO_INIT_ZERO_BYTES = -4,
@@ -27,6 +25,7 @@ typedef struct __stack_buffer
     uint32_t _size;
     uint32_t _offset;
 }__stack_buffer;
+
 
 void* stack_buf_init(uint32_t size);
 
