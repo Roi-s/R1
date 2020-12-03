@@ -3,15 +3,10 @@
 
 //CONFIGUARE
 //----------------------------------------------------------------------------------------
-#define __VECTOR_INCLUDE_DEFAULT_LIBRARIES        //stdio.h, stdio.h
-//#define __VECTOR_CPP__
-#define _VECTOR_INT8_T 1
-#define _VECTOR_INT16_T 2
-#define _VECTOR_INT32_T 3
-#define _VECTOR_INT64_T 4
-#define _VECTOR_FLOAT_T 5
-#define _VECTOR_DOUBLE_T 6
+#define __VECTOR_INCLUDE_DEFAULT_LIBRARIES
+//----------------------------------------------------------------------------------------
 
+// MACRO FUNCTION        
 #define CAT(X, Y) X##_##Y
 #define _GET_NAME(name, type) CAT(name, type)
 #define _GET_FUNCTION(name, type) CAT(name, type)
@@ -40,23 +35,14 @@ typedef enum __vector_error
 #define TEMPLATE
 #ifdef T 
 
-	#ifdef __VECTOR_CPP__
-		void operator+(_GET_NAME(__vector2, T)* result, _GET_NAME(__vector2, T)* left, _GET_NAME(__vector2, T)* right);
-		void operator+(_GET_NAME(__vector3, T)* result, _GET_NAME(__vector3, T)* left, _GET_NAME(__vector3, T)* right);
-		void operator+(_GET_NAME(__vector4, T)* result, _GET_NAME(__vector4, T)* left, _GET_NAME(__vector4, T)* right);
-		void operator+(_GET_NAME(__vector5, T)* result, _GET_NAME(__vector5, T)* left, _GET_NAME(__vector5, T)* right);
-	#endif
-
 	typedef struct _GET_NAME(__vector2, T)
 	{
-		#define _VECTOR2_SIZE 2
 		T x;
 		T y;
 	}_GET_NAME(__vector2, T);
 
 	typedef struct _GET_NAME(__vector3, T)
 	{
-		#define _VECTOR3_SIZE 3
 		T x;
 		T y;
 		T z;
@@ -64,7 +50,6 @@ typedef enum __vector_error
 
 	typedef struct _GET_NAME(__vector4, T)
 	{
-	 	#define _VECTOR4_SIZE 4
 		T x;
 		T y;
 		T z;
@@ -73,7 +58,6 @@ typedef enum __vector_error
 
 	typedef struct _GET_NAME(__vector5, T)
 	{
-		#define _VECTOR5_SIZE 5
 		T x;
 		T y;
 		T z;
@@ -113,7 +97,6 @@ typedef enum __vector_error
 #endif
 
 
- 
 
 
 
