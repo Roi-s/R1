@@ -65,31 +65,35 @@ typedef enum __vector_error
 		T w;
 	}_GET_NAME(__vector5, T);
 
-	_GET_FUNCTION(__vector2, T)* _GET_NAME(__vector2_create, T)();
-	_GET_FUNCTION(__vector3, T)* _GET_NAME(__vector3_create, T)();
-	_GET_FUNCTION(__vector4, T)* _GET_NAME(__vector4_create, T)();
-	_GET_FUNCTION(__vector5, T)* _GET_NAME(__vector5_create, T)();
+	_GET_FUNCTION(__vector2, T)* _GET_NAME(vector2_create, T)();
+	_GET_FUNCTION(__vector3, T)* _GET_NAME(vector3_create, T)();
+	_GET_FUNCTION(__vector4, T)* _GET_NAME(vector4_create, T)();
+	_GET_FUNCTION(__vector5, T)* _GET_NAME(vector5_create, T)();
 
-	void _GET_NAME(_vector2_init, T)(_GET_NAME(__vector2, T)* left, T param1, T param2);
-	void _GET_NAME(_vector3_init, T)(_GET_NAME(__vector3, T)* left, T param1, T param2, T param3);
-	void _GET_NAME(_vector4_init, T)(_GET_NAME(__vector4, T)* left, T param1, T param2, T param3, T param4);  
-	void _GET_NAME(_vector5_init, T)(_GET_NAME(__vector5, T)* left, T param1, T param2, T param3, T param4, T param5);
+	void _GET_NAME(vector2_init, T)(_GET_NAME(__vector2, T)* left, T param1, T param2);
+	void _GET_NAME(vector3_init, T)(_GET_NAME(__vector3, T)* left, T param1, T param2, T param3);
+	void _GET_NAME(vector4_init, T)(_GET_NAME(__vector4, T)* left, T param1, T param2, T param3, T param4);  
+	void _GET_NAME(vector5_init, T)(_GET_NAME(__vector5, T)* left, T param1, T param2, T param3, T param4, T param5);
 
-	double _GET_NAME(_vector2_norm, T)(_GET_NAME(__vector2, T)* left);	 
-	double _GET_NAME(_vector3_norm, T)(_GET_NAME(__vector3, T)* left);
-	double _GET_NAME(_vector4_norm, T)(_GET_NAME(__vector4, T)* left);
-	double _GET_NAME(_vector5_norm, T)(_GET_NAME(__vector5, T)* left);
+	double _GET_NAME(vector2_norm, T)(_GET_NAME(__vector2, T)* left);	 
+	double _GET_NAME(vector3_norm, T)(_GET_NAME(__vector3, T)* left);
+	double _GET_NAME(vector4_norm, T)(_GET_NAME(__vector4, T)* left);
+	double _GET_NAME(vector5_norm, T)(_GET_NAME(__vector5, T)* left);
 
-	_GET_FUNCTION(__vector2, double)* _GET_NAME(_vector2_normalize, T)(_GET_NAME(__vector2, T)* left);
-	_GET_FUNCTION(__vector3, double)* _GET_NAME(_vector3_normalize, T)(_GET_NAME(__vector3, T)* left);
-	_GET_FUNCTION(__vector4, double)* _GET_NAME(_vector4_normalize, T)(_GET_NAME(__vector4, T)* left);
-	_GET_FUNCTION(__vector5, double)* _GET_NAME(_vector5_normalize, T)(_GET_NAME(__vector5, T)* left);
+	_GET_FUNCTION(__vector2, double)* _GET_NAME(vector2_normalize, T)(_GET_NAME(__vector2, T)* left);
+	_GET_FUNCTION(__vector3, double)* _GET_NAME(vector3_normalize, T)(_GET_NAME(__vector3, T)* left);
+	_GET_FUNCTION(__vector4, double)* _GET_NAME(vector4_normalize, T)(_GET_NAME(__vector4, T)* left);
+	_GET_FUNCTION(__vector5, double)* _GET_NAME(vector5_normalize, T)(_GET_NAME(__vector5, T)* left);
 
-	void _GET_NAME(_vector2_add, T)(_GET_NAME(__vector2, T)* result, _GET_NAME(__vector2, T)* left, _GET_NAME(__vector2, T)* right);
-	void _GET_NAME(_vector3_add, T)(_GET_NAME(__vector3, T)* result, _GET_NAME(__vector3, T)* left, _GET_NAME(__vector3, T)* right);
-	void _GET_NAME(_vector4_add, T)(_GET_NAME(__vector4, T)* result, _GET_NAME(__vector4, T)* left, _GET_NAME(__vector4, T)* right);
-	void _GET_NAME(_vector5_add, T)(_GET_NAME(__vector5, T)* result, _GET_NAME(__vector5, T)* left, _GET_NAME(__vector5, T)* right);
+	void _GET_NAME(vector2_add, T)(_GET_NAME(__vector2, T)* result, _GET_NAME(__vector2, T)* left, _GET_NAME(__vector2, T)* right);
+	void _GET_NAME(vector3_add, T)(_GET_NAME(__vector3, T)* result, _GET_NAME(__vector3, T)* left, _GET_NAME(__vector3, T)* right);
+	void _GET_NAME(vector4_add, T)(_GET_NAME(__vector4, T)* result, _GET_NAME(__vector4, T)* left, _GET_NAME(__vector4, T)* right);
+	void _GET_NAME(vector5_add, T)(_GET_NAME(__vector5, T)* result, _GET_NAME(__vector5, T)* left, _GET_NAME(__vector5, T)* right);
 	
+	void _GET_NAME(vector2_free, T)(_GET_NAME(__vector2, T)* left);
+	void _GET_NAME(vector3_free, T)(_GET_NAME(__vector3, T)* left);
+	void _GET_NAME(vector4_free, T)(_GET_NAME(__vector4, T)* left);
+	void _GET_NAME(vector5_free, T)(_GET_NAME(__vector5, T)* left);
 
 
 #endif
